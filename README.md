@@ -7,4 +7,4 @@
 ### Finite State Machine
 1. [Deterministic Finite Automata]
 
-[Deterministic Finite Automata]: https://github.com/VijayaGB98/automata-theory-py/blob/master/finite-state-machine/DFA.py
+[Deterministic Finite Automata]: https://github.com/VijayaGB98/automata-theory-py/blob/master/finite-state-machine/deterministic-finite-automata/DFA.py
