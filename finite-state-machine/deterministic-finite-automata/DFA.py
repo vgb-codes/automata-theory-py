@@ -14,12 +14,12 @@ class DFA:
         """Takes user input for START_STATE and ACCEPT_STATE, and checks if it's a valid state (if it belongs to Q)"""
         while(True):
             start = input("Enter the START_STATE: ")
-            accept = input("Enter the ACCEPT_STATE: ").split()
+            accept = input("Enter the ACCEPT_STATES: ").split()
             #Making sure that start and accept are both in Q and that start and accept are not the state
             if (start in self.Q) and (set(accept).issubset(set(self.Q))):
                 return start, accept
             else:
-                print("Please enter STATE_STATE and ACCEPT_STATEs that are in Q : {}.\nAccept states should be a valid subset of Q\n".format(self.Q))
+                print("Please enter STATE_STATE and ACCEPT_STATES that are in Q : {}.\nAccept states should be a valid subset of Q\n".format(self.Q))
 
     def populate_states(self):
         """Takes user input for states (Q)"""
@@ -38,7 +38,7 @@ class DFA:
         transition_dict = {el : {el_2 : 'REJECT' for el_2 in self.SIGMA} for el in self.Q}
 
         for key, dict_value in transition_dict.items():
-            print("Enter transitions for state {}. Enter 'REJECT' for stop state".format(key))
+            print("Enter transitions for state {}. If required, use 'REJECT'.".format(key))
 
             for input_alphabet, transition_state in dict_value.items():
                 transition_dict[key][input_alphabet] = input("CURRENT STATE : {}\tINPUT ALPHABET : {}\tNEXT STATE : ".format(key, input_alphabet))
