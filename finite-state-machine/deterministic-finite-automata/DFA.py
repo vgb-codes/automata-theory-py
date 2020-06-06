@@ -6,7 +6,7 @@ class DFA:
         """Initialize DFSM object"""
         self.Q = self.populate_states()
         self.SIGMA = self.populate_alphabet()
-        self.RHO = self.populate_transition_function()
+        self.DELTA = self.populate_transition_function()
         self.START_STATE, self.ACCEPT_STATES = self.set_start_accept()
         self.CURRENT_STATE = None
 
@@ -55,8 +55,8 @@ class DFA:
         """Takes in current state and goes to next state based on input symbol."""
         if (self.CURRENT_STATE == 'REJECT'):
             return False
-        print("CURRENT STATE : {}\tINPUT SYMBOL : {}\t NEXT STATE : {}".format(self.CURRENT_STATE, input_symbol, self.RHO[self.CURRENT_STATE][input_symbol]))
-        self.CURRENT_STATE = self.RHO[self.CURRENT_STATE][input_symbol]
+        print("CURRENT STATE : {}\tINPUT SYMBOL : {}\t NEXT STATE : {}".format(self.CURRENT_STATE, input_symbol, self.DELTA[self.CURRENT_STATE][input_symbol]))
+        self.CURRENT_STATE = self.DELTA[self.CURRENT_STATE][input_symbol]
         return self.CURRENT_STATE
         
     def check_if_accept(self):
