@@ -70,9 +70,9 @@ class DFA:
         """Run the machine on input string"""
         self.CURRENT_STATE = self.START_STATE
         for ele in in_string:
-            check = self.run_state_transition(ele)
+            check_state = self.run_state_transition(ele)
             #Check if new state is not REJECT
-            if (check == 'REJECT'):
+            if (check_state == 'REJECT'):
                 return False
         return self.check_if_accept()
 
