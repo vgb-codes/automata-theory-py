@@ -4,7 +4,7 @@ DFA M is a 5-tuple consisting of (Q, SIGMA, RHO, START_STATE, ACCEPT_STATES)
 
 1. Finite set of states Q
 2. Finite set of input symbols called alphabet SIGMA
-3. Transition Function RHO: Q X E -> Q
+3. Transition Function DELTA: Q X E -> Q
 4. An initial or START_STATE
 5. A set of ACCEPT_STATES
 
